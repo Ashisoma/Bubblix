@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "717410709631",
+    "project_id": "bubblix-d58dc",
+    "storage_bucket": "bubblix-d58dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717410709631:android:c606da9695ede914b2cf4a",
+        "android_client_info": {
+          "package_name": "com.example.bubblix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717410709631-1bv1k0ermq0apli8eqdui84d6deg1e8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMEQPO9Yz3RrqQahD_GE9svIj9yObh2zw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717410709631-1bv1k0ermq0apli8eqdui84d6deg1e8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
