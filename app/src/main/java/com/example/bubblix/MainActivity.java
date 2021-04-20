@@ -1,126 +1,182 @@
-package com.example.bubblix;
+package com.example.bubblix.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.bubblix.ui.LogIn;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.ApiException;
+import com.example.bubblix.R;
+import com.example.bubblix.helper.UserHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-    private GoogleSignInClient mGoogleSignInClient;
-    private final static int RC_SIGN_IN = 123;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
     private FirebaseAuth mAuth;
+    @BindView(R.id.nameEditText) EditText mNameEditText;
+    @BindView(R.id.mentorNameTExtView) EditText mMentorEditText;
+    @BindView(R.id.yearTextView) EditText mYearTextView;
+    @BindView(R.id.emailEditText) EditText mEmailEditText;
+    @BindView(R.id.passwordEditText) EditText mPasswordEditText;
+    @BindView(R.id.confirmPasswordEditText) EditText mConfirmPasswordEditText;
+    @BindView(R.id.loginTextView) TextView mLoginTextView;
 
+    @BindView(R.id.createUserButton) Button mCreateUserButton;
 
+    @BindView(R.id.progressBar) ProgressBar progressBar;
 
-    @Override
-    protected void onStart() {
-        super.onStart();
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private ProgressDialog mAuthProgressDialog;
 
-        FirebaseUser user = mAuth.getCurrentUser();
-        if(user!=null){
-            Intent intent = new Intent(getApplicationContext(), LogIn.class);
-            startActivity(intent);
-        }
-
-    }
+    private String mName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_create_account);
         mAuth = FirebaseAuth.getInstance();
+        ButterKnife.bind(this);
 
-        createRequest();
-
-        findViewById(R.id.google_signIn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signIn();
-            }
-        });
-
-    }
-
-    private void createRequest() {
-
-        // Configure Google Sign In
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-
-        // Build a GoogleSignInClient with the options specified by gso.
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-
-    }
-
-    private void signIn() {
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
+        mLoginTextView.setOnClickListener(this);
+        mCreateUserButton.setOnClickListener(this);
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN) {
-            Task <GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                // Google Sign In was successful, authenticate with Firebase
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-
-                firebaseAuthWithGoogle(account);
-            } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
-                // ...
-                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
+    public void onClick(View v) {
+        if(v == mLoginTextView){
+            Intent intent = new Intent(StudentCreateAccountActivity.this, LoginActivity.class);
+            intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK | intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        } if (v == mCreateUserButton){
+            createNewUser();
         }
     }
+    public void createNewUser(){
+        String name = mNameEditText.getText().toString().trim();
+        String mentor = mMentorEditText.getText().toString().trim();
+        String year = mYearTextView.getText().toString().trim();
+        String email = mEmailEditText.getText().toString().trim();
+        String password = mPasswordEditText.getText().toString().trim();
+        String confirmPassword = mConfirmPasswordEditText.getText().toString().trim();
 
-    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
 
-        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-        mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener() {
-                    @Override
-                    public void onComplete(@NonNull Task task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(getApplicationContext(),LogIn.class);
-                            startActivity(intent);
 
-                        } else {
-                            Toast.makeText(MainActivity.this, "Sorry auth failed.", Toast.LENGTH_SHORT).show();
+        if(TextUtils.isEmpty(name)){
+            mNameEditText.setError("Please enter your name");
+            mNameEditText.requestFocus();
+            return;
+        }
+        else if(TextUtils.isEmpty(mentor)){
+            mPasswordEditText.setError("Please enter your mentor's name");
+            mPasswordEditText.requestFocus();
+            return;
+        }
+        else if(TextUtils.isEmpty(year)){
+            mYearTextView.setError("Please enter your cohort year");
+            mYearTextView.requestFocus();
+            return;
+        }
+        else if(TextUtils.isEmpty(password)){
+            mPasswordEditText.setError("Please enter password");
+            mPasswordEditText.requestFocus();
+            return;
+        }
+        else if(TextUtils.isEmpty(confirmPassword)){
+            mConfirmPasswordEditText.setError("Confirm your password");
+            mConfirmPasswordEditText.requestFocus();
+            return;
+        }
+        else if (!password.equals(confirmPassword)){
+            mConfirmPasswordEditText.setError("Passwords don't match");
+            mConfirmPasswordEditText.requestFocus();
+            return;
+        }
+        else if(password.length()>6){
+            mPasswordEditText.setError("Please create a password containing at least 6 characters");
+            mPasswordEditText.requestFocus();
+            return;
+        }
+        else if(year.length()>4){
+            mYearTextView.setError("Enter the valid correct year");
+            mYearTextView.requestFocus();
+            return;
+        }
+        else if (!ValidEmail(email)){
+            mEmailEditText.setError("Enter a valid email address");
+            mEmailEditText.requestFocus();
+            return;
+        }
+        mAuthProgressDialog = new ProgressDialog(this);
+        mAuthProgressDialog.setTitle("Loading...");
+        mAuthProgressDialog.show();
+        mAuthProgressDialog.setMessage("Authenticating ...");
+        mAuthProgressDialog.setCancelable(false);
+
+
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                if (task.isSuccessful()){
+                    UserHelper user = new UserHelper(name,mentor,year,email,password);
+                    FirebaseDatabase.getInstance().getReference("users")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(StudentCreateAccountActivity.this, "Registration Successful", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(StudentCreateAccountActivity.this, DashboardActivity    .class);
+                                startActivity(intent);
+                                finish();
+                            }else {
+                                Toast.makeText(StudentCreateAccountActivity.this, "Registration failed failed.", Toast.LENGTH_SHORT).show();
+                            }
 
                         }
-
-                        // ...
-                    }
-                });
+                    });
+                }else {
+                    Toast.makeText(StudentCreateAccountActivity.this,"Registration failed failed.", Toast.LENGTH_SHORT).show();
+                }
+                mAuthProgressDialog.dismiss();
+            }
+        });
     }
+    private boolean ValidEmail(String email) {
+        return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
+    }
+
+    private void createAuthStateListener(){
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                final FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null){
+                    Intent intent = new Intent(StudentCreateAccountActivity.this, LoginActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        };
+    }
+
 }
