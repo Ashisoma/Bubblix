@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    tools:context=".StudentCreateAccountActivity">
+    tools:context=".ui.CreateAccount">
 
 
     <TextView
@@ -50,20 +50,6 @@
             android:background="@android:color/white"
             android:hint="Location/Hostel"
             android:inputType="textPersonName"
-            android:nextFocusDown="@+id/passwordEditText"
-            android:padding="10dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="#040303"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/yearTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@android:color/white"
-            android:hint="Class Of"
-            android:inputType="number"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:textColor="@android:color/black"
