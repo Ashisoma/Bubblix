@@ -39,12 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
     private static int SPLASH_SCREEN = 5000;
 
-  //  @BindView(R.id.imageView)
+    @BindView(R.id.imageView)
     ImageView imageView;
 
     // TODO : ADD DEPENDANCY FOR REAL TIME DATABASE AND DEPLOY APP FOR THE TEAM\
-    // TODO : add menu and dashboard
-    // TODO: FINALISE ON THE UI
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

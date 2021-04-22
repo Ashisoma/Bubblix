@@ -58,7 +58,6 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
         mLoginTextView.setOnClickListener(this);
         mCreateUserButton.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View v) {
         if(v == mLoginTextView){
@@ -137,7 +136,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if (task.isSuccessful()){
-                    UserHelper user = new UserHelper(name,email, location);
+                    UserHelper user = new UserHelper(name,email,location, password);
                     FirebaseDatabase.getInstance().getReference("users")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
