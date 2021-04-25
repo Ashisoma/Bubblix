@@ -1,13 +1,13 @@
 package com.example.bubblix.helper;
 
 public class UserHelper {
-    String name, email, location,password;
+    String fullName, email, location,password;
 
     public UserHelper() {
     }
 
-    public UserHelper(String name, String email, String location, String password) {
-        this.name = name;
+    public UserHelper(String fullName, String email, String location, String password) {
+        this.fullName = fullName;
         this.email = email;
         this.location = location;
         this.password = password;
