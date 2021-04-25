@@ -45,7 +45,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
-
+// TODO CREATE AN ARRAY ADAPTER FOR THE VARIOUS PRODUCTS ON SALE
 
 //        navigationView.setCheckedItem(R.id.nav_home);
     }
@@ -81,6 +81,9 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 break;
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_contact:
+                Toast.makeText(this, "We will get back to you shortly", Toast.LENGTH_SHORT).show();
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

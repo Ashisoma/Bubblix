@@ -1,7 +1,7 @@
 package com.example.bubblix.helper;
 
 public class UserHelper {
-    String fullName, email, location,password;
+    public String fullName, email, location,password;
 
     public UserHelper() {
     }

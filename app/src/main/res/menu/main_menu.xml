@@ -17,12 +17,16 @@
             android:icon="@drawable/cart_24"
             android:title="@string/cart" />
         <item
+            android:id="@+id/nav_contact"
+            android:icon="@android:drawable/stat_sys_phone_call"
+            android:title="@string/contact" />
+        <item
             android:id="@+id/nav_share"
             android:icon="@drawable/share_icon"
             android:title="@string/share" />
         <item
             android:id="@+id/logOut"
-            android:icon="@drawable/share_icon"
+            android:icon="@android:drawable/ic_menu_revert"
             android:title="@string/log_out" />
     </group>
 </menu>

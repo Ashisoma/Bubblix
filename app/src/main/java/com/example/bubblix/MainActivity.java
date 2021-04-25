@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.imageView)
     ImageView imageView;
 
-    // TODO : ADD DEPENDANCY FOR REAL TIME DATABASE AND DEPLOY APP FOR THE TEAM\
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
