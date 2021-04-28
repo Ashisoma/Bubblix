@@ -38,9 +38,9 @@ public class ProfileActivity extends AppCompatActivity {
         userId = user.getUid();
 
         final TextView greeting = findViewById(R.id.greeting);
-        final TextView fullName = findViewById(R.id.nameTV);
-        final TextView accountEmail = findViewById(R.id.emailTv);
-        final TextView myLocation = findViewById(R.id.locationTv);
+        final TextView fullName = findViewById(R.id.accountName);
+        final TextView accountEmail = findViewById(R.id.email);
+        final TextView myLocation = findViewById(R.id.locationM);
 
 
         reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {

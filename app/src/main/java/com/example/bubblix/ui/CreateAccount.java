@@ -89,11 +89,6 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
             mPasswordEditText.requestFocus();
             return;
         }
-//        else if(TextUtils.isEmpty(year)){
-//            mYearTextView.setError("Please enter your cohort year");
-//            mYearTextView.requestFocus();
-//            return;
-//        }
         else if(TextUtils.isEmpty(password)){
             mPasswordEditText.setError("Please enter password");
             mPasswordEditText.requestFocus();
@@ -114,11 +109,6 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
             mPasswordEditText.requestFocus();
             return;
         }
-//        else if(year.length()>4){
-//            mYearTextView.setError("Enter the valid correct year");
-//            mYearTextView.requestFocus();
-//            return;
-//        }
         else if (!ValidEmail(email)){
             mEmailEditText.setError("Enter a valid email address");
             mEmailEditText.requestFocus();
