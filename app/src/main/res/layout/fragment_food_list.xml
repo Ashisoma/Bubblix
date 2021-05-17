@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.FoodListFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:id="@+id/articleNameTextView"
+            android:layout_width="391dp"
+            android:layout_height="60dp"
+            android:text="Food"
+            android:textColor="#03A9F4"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="391dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/articleNameTextView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:text="Description"
+            android:textStyle="italic" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="31dp">
+
+            <Button
+                android:id="@+id/articleAuthorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Add to Cart" />
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

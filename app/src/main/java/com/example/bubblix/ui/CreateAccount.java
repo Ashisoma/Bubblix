@@ -23,12 +23,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class CreateAccount extends AppCompatActivity implements View.OnClickListener {
+public class        CreateAccount extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
     @BindView(R.id.nameEditText) EditText mNameEditText;
@@ -45,8 +46,10 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
 
     private FirebaseAuth.AuthStateListener mAuthListener;
     private ProgressDialog mAuthProgressDialog;
-
-    private String mName;
+    private FirebaseDatabase rootNode;
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,9 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
 
         mLoginTextView.setOnClickListener(this);
         mCreateUserButton.setOnClickListener(this);
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+//        userId = user.getUid();
     }
     @Override
     public void onClick(View v) {
@@ -67,6 +73,18 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
             finish();
         } if (v == mCreateUserButton){
             createNewUser();
+
+
+            String name = mNameEditText.getText().toString().trim();
+            String location = mLocation.getText().toString().trim();
+            String email = mEmailEditText.getText().toString().trim();
+            String password = mPasswordEditText.getText().toString().trim();
+            String confirmPassword = mConfirmPasswordEditText.getText().toString().trim();
+
+            UserHelper userHelper = new UserHelper(name, email, location,password);
+            reference = rootNode.getReference("users");
+
+            reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(userHelper);
         }
     }
     public void createNewUser(){
@@ -76,6 +94,11 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
         String email = mEmailEditText.getText().toString().trim();
         String password = mPasswordEditText.getText().toString().trim();
         String confirmPassword = mConfirmPasswordEditText.getText().toString().trim();
+
+        UserHelper userHelper = new UserHelper(name, email, location,password);
+        reference = rootNode.getReference("users");
+
+        reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(userHelper);
 
 
 

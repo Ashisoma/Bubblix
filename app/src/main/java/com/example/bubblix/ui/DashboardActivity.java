@@ -11,11 +11,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bubblix.R;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     //Variables
@@ -23,7 +33,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     NavigationView navigationView;
     Toolbar toolbar;
     Menu menu;
-    TextView textView;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +58,26 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 // TODO CREATE AN ARRAY ADAPTER FOR THE VARIOUS PRODUCTS ON SALE
 
 //        navigationView.setCheckedItem(R.id.nav_home);
+
+        listView = findViewById(R.id.listView);
+
+
+        ArrayList<String> list = new ArrayList<>();
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,   android.R.layout.simple_list_item_1, list);
+        listView.setAdapter(adapter);
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("services");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     @Override
@@ -76,6 +106,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 startActivity(i);
                 break;
             case R.id.logOut:
+                FirebaseAuth.getInstance().signOut();
                 Intent intent3 = new Intent(DashboardActivity.this, LogIn.class);
                 startActivity(intent3);
                 break;
@@ -88,5 +119,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+
+
     }
 }
