@@ -100,8 +100,6 @@ public class        CreateAccount extends AppCompatActivity implements View.OnCl
 
         reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(userHelper);
 
-
-
         if(TextUtils.isEmpty(name)){
             mNameEditText.setError("Please enter your name");
             mNameEditText.requestFocus();
