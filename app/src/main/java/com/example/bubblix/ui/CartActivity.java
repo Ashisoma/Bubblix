@@ -30,7 +30,7 @@ public class CartActivity extends AppCompatActivity implements NavigationView.On
     private String [] artistName = new String[] {"Adele", "Ada", "hER", "hIM", "L.M.A.M","Houghton", "Crowder", "T-sharp", "hillsong", "Patrick Kibuya", "Bill Gaither", "Mercy me", "Kirk Franklyne"};
     @BindView(R.id.listView)
     ListView mListView;
-    @BindView(R.id.songTextView)
+//    @BindView(R.id.songTextView)
     TextView mSongTextView;
     //Variables
     DrawerLayout drawerLayout;

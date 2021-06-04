@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bubblix">
         <activity android:name=".ui.CustomPurchaseActivity"></activity>
-        <activity android:name=".SupperActivity" />
-        <activity android:name=".ui.LunchActivity" />
-        <activity android:name=".ui.BreakFastActivity" />
+        <activity android:name=".ui.foods.SupperActivity" />
+        <activity android:name=".ui.foods.LunchActivity" />
+        <activity android:name=".ui.foods.BreakFastActivity" />
         <activity android:name=".ui.PaymentActivity" />
         <activity android:name=".ui.CartActivity" />
         <activity android:name=".ui.ProfileActivity" />

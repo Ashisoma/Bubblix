@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LunchActivity">
+    tools:context=".ui.foods.LunchActivity">
     <LinearLayout
         android:id="@+id/mayai"
         android:layout_width="wrap_content"

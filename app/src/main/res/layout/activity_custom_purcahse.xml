@@ -16,11 +16,26 @@
         android:text="Customised Purchase"
         android:textColor="#BD0E0E"
         android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15sp"
+        android:fontFamily="@font/baloo"
+        android:text="This feature is for those getting purchases for goods that need description or good from town. The delivery could take longer than usual depending on the order."
+        android:textAlignment="center"
+        android:textColor="#105154"
+        android:textSize="14sp" />
+
     <EditText
         android:id="@+id/et_message"
+        android:layout_below="@+id/tv_desc"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/bg_round"
         android:gravity="top"
         android:hint="Order"
