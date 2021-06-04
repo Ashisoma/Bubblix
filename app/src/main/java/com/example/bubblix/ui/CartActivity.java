@@ -11,14 +11,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bubblix.R;
+import com.example.bubblix.adapters.FoodArrayAdapter;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
+import butterknife.BindView;
+
 public class CartActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
+    private  String[] songName = new String[]{"hello", "jesus", "love", "better", "Live for you", "At the Center", "Come as you are", "we belong to you", "who am i", "Moyo wangu", "One day ata a time", "I can only imagine", "Wanna be happy"};
+    private String [] artistName = new String[] {"Adele", "Ada", "hER", "hIM", "L.M.A.M","Houghton", "Crowder", "T-sharp", "hillsong", "Patrick Kibuya", "Bill Gaither", "Mercy me", "Kirk Franklyne"};
+    @BindView(R.id.listView)
+    ListView mListView;
+    @BindView(R.id.songTextView)
+    TextView mSongTextView;
     //Variables
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -28,6 +41,24 @@ public class CartActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+
+
+        FoodArrayAdapter adapter = new FoodArrayAdapter(this, android.R.layout.simple_list_item_1, songName, artistName);
+
+        mListView.setAdapter(adapter);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String song = ((TextView)view).getText().toString();
+                Toast.makeText(CartActivity.this, song, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        Intent intent = getIntent();
+        String nameSong = intent.getStringExtra("song");
+        mSongTextView.setText("Here are the songs available: " + nameSong);
+
 
 
         drawerLayout = findViewById(R.id.drawer_layout);

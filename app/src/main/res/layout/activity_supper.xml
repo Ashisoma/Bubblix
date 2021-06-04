@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SupperActivity">
+    <LinearLayout
+        android:id="@+id/mayai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Ugali Mayai"
+            android:textColor="#5314A0"
+            android:id="@+id/recipeNameTextView"/>
+
+        <TextView
+            android:id="@+id/cuisineTypeTextView"
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:text="90/-"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:text="Buy"
+                android:id="@+id/ratingTextView"
+                android:layout_alignParentEnd="true"
+                android:background="@color/grey"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/mayai"
+        android:id="@+id/mix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Ugali Mix"
+            android:textColor="#5314A0"
+            android:id="@+id/mxrecipeNameTextView"/>
+
+        <TextView
+            android:id="@+id/mxcuisineTypeTextView"
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:text="80/-"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:text="Buy"
+                android:id="@+id/mxratingTextView"
+                android:layout_alignParentEnd="true"
+                android:background="@color/grey"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/bamba"
+        android:layout_below="@+id/mix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Bamba"
+            android:textColor="#5314A0"
+            android:id="@+id/bmrecipeNameTextView"/>
+
+        <TextView
+            android:id="@+id/bmcuisineTypeTextView"
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:text="100/-"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/mratingTextView"
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@color/grey"
+                android:text="Buy"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/bamba"
+        android:id="@+id/pilau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Pilau"
+            android:textColor="#5314A0"
+            android:id="@+id/plrecipeNameTextView"/>
+
+        <TextView
+            android:id="@+id/plcuisineTypeTextView"
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:text="100/-"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:text="Buy"
+                android:id="@+id/plratingTextView"
+                android:layout_alignParentEnd="true"
+                android:background="@color/grey"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/riceND"
+        android:layout_below="@+id/pilau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Rice Ndengu"
+            android:textColor="#5314A0"
+            android:id="@+id/smrecipeNameTextView"/>
+
+        <TextView
+            android:id="@+id/smcuisineTypeTextView"
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:text="100/-"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:text="Buy"
+                android:id="@+id/smratingTextView"
+                android:layout_alignParentEnd="true"
+                android:background="@color/grey"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/riceB"
+        android:layout_below="@+id/Matumbo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Rice Beans"
+            android:textColor="#5314A0"
+            android:id="@+id/rrecipeNameTextView"/>
+
+        <TextView
+            android:id="@+id/rmcuisineTypeTextView"
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:text="100/-"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:text="Buy"
+                android:id="@+id/rmratingTextView"
+                android:layout_alignParentEnd="true"
+                android:background="@color/grey"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Matumbo"
+        android:layout_below="@+id/riceND"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Matumbo"
+            android:textColor="#5314A0"
+            android:id="@+id/mrecipeNameTextView"/>
+
+        <TextView
+            android:id="@+id/mcuisineTypeTextView"
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:text="100/-"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:text="Buy"
+                android:id="@+id/mbratingTextView"
+                android:layout_alignParentEnd="true"
+                android:background="@color/grey"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/riceB"
+        android:id="@+id/chafua2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Chafua"
+            android:textColor="#5314A0"
+            android:id="@+id/ndrecipeNameTextView"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="Customise purchase"
+                android:id="@+id/ndplratingTextView"
+                android:layout_alignParentEnd="true"
+                android:background="@color/grey"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

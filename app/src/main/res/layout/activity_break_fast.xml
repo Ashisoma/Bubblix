@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.BreakFastActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="20dp"
+        android:text="BREAKFAST"
+        android:paddingLeft="60dp"
+        android:textStyle="bold"
+        android:textColor="#B15711"
+        android:id="@+id/breakFast"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_below="@+id/breakFast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tea"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/articleNameTextView"
+            android:layout_width="391dp"
+            android:layout_height="40dp"
+            android:text="Tea"
+            android:textColor="#03A9F4"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="391dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/articleNameTextView"
+            android:layout_alignParentStart="true"
+            android:text="This is the normal tea served."
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="391dp"
+            android:layout_height="wrap_content"
+            android:text="20/-"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/smallCupTea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Add to Cart" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/tea"
+        android:id="@+id/specialTea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/specialTeaTV"
+            android:layout_width="391dp"
+            android:layout_height="40dp"
+            android:text="Full cup tea"
+            android:textColor="#03A9F4"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sptdescriptionTextView"
+            android:layout_width="391dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/articleNameTextView"
+            android:layout_alignParentStart="true"
+            android:text="This is the full tea usually higher price."
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/SPprice"
+            android:layout_width="391dp"
+            android:layout_height="wrap_content"
+            android:text="25/-"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/fulCUpTea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Add to Cart" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/specialTea"
+        android:id="@+id/chapatis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/chapos"
+            android:layout_width="391dp"
+            android:layout_height="40dp"
+            android:text="Three Chapatis"
+            android:textColor="#03A9F4"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/CHdescriptionTextView"
+            android:layout_width="391dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/articleNameTextView"
+            android:layout_alignParentStart="true"
+            android:text="This is the normal tea served."
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/CHprice"
+            android:layout_width="391dp"
+            android:layout_height="wrap_content"
+            android:text="40/-"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/articleAuthorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Add to Cart" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/chapatis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/chapatistv"
+            android:layout_width="391dp"
+            android:layout_height="40dp"
+            android:text="Three Chapatis"
+            android:textColor="#03A9F4"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ChdescriptionTextView"
+            android:layout_width="391dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/articleNameTextView"
+            android:layout_alignParentStart="true"
+            android:text="This is the normal tea served."
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/Chprice"
+            android:layout_width="391dp"
+            android:layout_height="wrap_content"
+            android:text="40/-"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/chapatisBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Add to Cart" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
