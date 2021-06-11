@@ -54,7 +54,7 @@
                         android:layout_width="150dp"
                         android:layout_height="20dp"
                         android:text="Buy"
-                        android:id="@+id/ratingTextView"
+                        android:id="@+id/ugaliMAyaiBTN"
                         android:layout_alignParentEnd="true"
                         android:background="@color/grey"
                         android:layout_alignParentRight="true"
@@ -93,7 +93,7 @@
                         android:layout_width="150dp"
                         android:layout_height="20dp"
                         android:text="Buy"
-                        android:id="@+id/mxratingTextView"
+                        android:id="@+id/ugaliMixBtn"
                         android:layout_alignParentEnd="true"
                         android:background="@color/grey"
                         android:layout_alignParentRight="true"
@@ -129,7 +129,7 @@
                     android:layout_height="wrap_content">
 
                     <Button
-                        android:id="@+id/mratingTextView"
+                        android:id="@+id/bambaBtn"
                         android:layout_width="150dp"
                         android:layout_height="20dp"
                         android:layout_alignParentEnd="true"
@@ -171,7 +171,7 @@
                         android:layout_width="150dp"
                         android:layout_height="20dp"
                         android:text="Buy"
-                        android:id="@+id/plratingTextView"
+                        android:id="@+id/pilauBtn"
                         android:layout_alignParentEnd="true"
                         android:background="@color/grey"
                         android:layout_alignParentRight="true"
@@ -199,7 +199,7 @@
                     android:id="@+id/smcuisineTypeTextView"
                     android:layout_width="390dp"
                     android:layout_height="wrap_content"
-                    android:text="100/-"
+                    android:text="50/-"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -210,7 +210,7 @@
                         android:layout_width="150dp"
                         android:layout_height="20dp"
                         android:text="Buy"
-                        android:id="@+id/smratingTextView"
+                        android:id="@+id/riceNdenguBTN"
                         android:layout_alignParentEnd="true"
                         android:background="@color/grey"
                         android:layout_alignParentRight="true"
@@ -238,7 +238,7 @@
                     android:id="@+id/rmcuisineTypeTextView"
                     android:layout_width="390dp"
                     android:layout_height="wrap_content"
-                    android:text="100/-"
+                    android:text="50/-"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -249,7 +249,7 @@
                         android:layout_width="150dp"
                         android:layout_height="20dp"
                         android:text="Buy"
-                        android:id="@+id/rmratingTextView"
+                        android:id="@+id/riceBeansBTN"
                         android:layout_alignParentEnd="true"
                         android:background="@color/grey"
                         android:layout_alignParentRight="true"
@@ -277,7 +277,7 @@
                     android:id="@+id/mcuisineTypeTextView"
                     android:layout_width="390dp"
                     android:layout_height="wrap_content"
-                    android:text="100/-"
+                    android:text="80/-"
                     android:textSize="20sp"
                     android:textStyle="bold" />
                 <RelativeLayout
@@ -287,7 +287,7 @@
                         android:layout_width="150dp"
                         android:layout_height="20dp"
                         android:text="Buy"
-                        android:id="@+id/mbratingTextView"
+                        android:id="@+id/matumboBTN"
                         android:layout_alignParentEnd="true"
                         android:background="@color/grey"
                         android:layout_alignParentRight="true"
@@ -320,7 +320,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:text="Customise purchase"
-                        android:id="@+id/ndplratingTextView"
+                        android:id="@+id/CUSTOMbTN"
                         android:layout_alignParentEnd="true"
                         android:background="@color/grey"
                         android:layout_alignParentRight="true"
