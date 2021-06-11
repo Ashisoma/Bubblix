@@ -42,5 +42,27 @@ public class LunchActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
 
+        if ( v == mBamba){
+            // send notification and ask for payment
+        }
+        else if ( v == mCustomOrder){
+
+        }
+        else if ( v == mMayai){
+
+        }
+        else if ( v == mPilau){
+
+        }
+        else if ( v == mRiceBeans){
+
+        }
+        else if ( v == mRiceNdengu){
+
+        }
+        else if ( v == mUgaliMix){
+
+        }
+
     }
 }

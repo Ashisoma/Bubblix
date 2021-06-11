@@ -44,5 +44,26 @@ public class SupperActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
 
+        if ( v == mBamba){
+            // send notification and ask for payment
+        }
+        else if ( v == mCustomBTN){
+
+        }
+        else if ( v == mMayai){
+
+        }
+        else if ( v == mPilau){
+
+        }
+        else if ( v == mRiceBeans){
+
+        }
+        else if ( v == mRiceNdengu){
+
+        }
+        else if ( v == mMixBtn){
+
+        }
     }
 }
