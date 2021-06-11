@@ -2,11 +2,14 @@ package com.example.bubblix.ui.foods;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.bubblix.R;
+import com.example.bubblix.ui.CartActivity;
+import com.example.bubblix.ui.CustomPurchaseActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,7 +49,9 @@ public class LunchActivity extends AppCompatActivity implements View.OnClickList
             // send notification and ask for payment
         }
         else if ( v == mCustomOrder){
-
+            Intent intent = new Intent(LunchActivity.this, CustomPurchaseActivity.class);
+            intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK | intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         }
         else if ( v == mMayai){
 
